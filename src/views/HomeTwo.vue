@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-  <HelloWorld msg="COUCOU"/>
+  <HelloWorld msg="COUCOU" :count="count"/>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+  return{
+  'count' : 0
+  }
   }
 }
 </script>

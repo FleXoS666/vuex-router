@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    
+    <div>
+      <p>{{ count }} <button v-on:click="increment">+</button> </p>
+    </div>
   </div>
 </template>
 
@@ -9,7 +11,13 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    count: Number
+  },
+  methods:{
+    increment(){
+      this.count++
+    }
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <img alt="Vue logo" src="../assets/nedry2.gif">
-  <HelloWorld msg="Tu veux voir ma bite ?"/>
+  <HelloWorld msg="Tu veux voir ma bite ?" :count="count"/>
   </div>
 </template>
 
@@ -13,6 +13,11 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+  return{
+  'count' : 0
   }
+}
 }
 </script>
