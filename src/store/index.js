@@ -13,6 +13,9 @@ export default new Vuex.Store({
 		
 	},
 	mutations: {
+		incrementGlobalCounter(state){
+			state.counterGlobal++
+		}
 	},
   // actions: {
   // },

@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
     <div>
       <p>{{ count }} <button v-on:click="increment">+</button> </p>
+      <p>{{ $store.state.counterGlobal }} <button v-on:click="incrementGlobal">+</button> </p>
     </div>
   </div>
 </template>
@@ -12,11 +13,19 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    count: Number
+    count: Number,
+    globalCounter: Number
+  },computed:{
+globalCounterValue: function(){
+return this.$store.statecounterGlobal
+}
   },
   methods:{
     increment(){
       this.count++
+    },
+    incrementGlobal(){
+      this.$store.commit('incrementGlobalCounter')
     }
   }
 }

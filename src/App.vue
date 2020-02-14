@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">HomeOne</router-link> |
+     <transition name="slide-fade"><router-link to="/">HomeOne</router-link></transition> |
       <router-link to="/Home2">HomeTwo</router-link> |
-      <router-link to="/Home3">HomeThree</router-link>
+      <router-link to="/Home3">HomeThree</router-link> 
+      <span v-if="$store.state.counterGlobal >= 10"> |
+      <router-link  to="/HotBabes.com">HotBabes.com</router-link> </span>
     </div>
     <keep-alive><router-view/></keep-alive>
   </div>
@@ -29,5 +31,15 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to{
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
