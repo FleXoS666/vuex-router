@@ -1,9 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/nedry.gif">
-    <HelloWorld msg="Tu n'as pas dis le mot magique AHAHAHAH !!!!
-    "/>
-    
+  <img alt="Vue logo" src="../assets/nedry2.gif">
+  <HelloWorld msg="Tu veux voir ma bite ?"/>
   </div>
 </template>
 
