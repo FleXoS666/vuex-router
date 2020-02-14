@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-     <transition name="slide-fade"><router-link to="/">HomeOne</router-link></transition> |
+    <router-link to="/">HomeOne</router-link> |
       <router-link to="/Home2">HomeTwo</router-link> |
       <router-link to="/Home3">HomeThree</router-link> 
       <span v-if="$store.state.counterGlobal >= 10"> |
       <router-link  to="/HotBabes.com">HotBabes.com</router-link> </span>
     </div>
-    <keep-alive><router-view/></keep-alive>
+    <keep-alive> <transition name="slide-fade"><router-view class="page"/></transition></keep-alive>
   </div>
 </template>
 
@@ -32,11 +32,15 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.page{
+  position: absolute;
+  background-color: white
+}
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to{
   transform: translateX(10px);
